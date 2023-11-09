@@ -71,6 +71,15 @@ input, select, textarea {
 	appearance: none;
 }
 
+img {
+	max-width: 100%;
+}
+
+.logo {
+	max-width: 30%;
+	max-height: 30%;
+}
+
 /* Basic */
 
 	@-ms-viewport {
@@ -3907,12 +3916,3 @@ input, select, textarea {
 			}
 
 		}
-
-img {
-	max-width: 100%;
-}
-
-.logo {
-	max-width: 30%;
-	max-height: 30%;
-}
