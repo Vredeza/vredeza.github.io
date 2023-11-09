@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>E-Portfolio - Projects</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<header id="header">
+  <a href="index.html" class="title">E-Portfolio</a>
+</header>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Main -->
+  <section id="main" class="wrapper">
+    <div class="inner" id="markdown-content"><!-- markdown content will show here --></div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="wrapper alt">
+  <div class="inner">
+    <ul class="menu">
+    </ul>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+<script>
+
+  let url = new URL(location);
+  let searchParams = new URLSearchParams(url.search);
+  let projectId = searchParams.get('p');
+
+  fetch(`markdown-pages/${projectId}.md`)
+          .then(response => response.text())
+          .then(markdown => {
+            const converter = new showdown.Converter();
+            const html = converter.makeHtml(markdown).replace(/<a/g, '<a target="_blank"');
+
+            document.getElementById('markdown-content').innerHTML = html;
+          });
+</script>
+
+</body>
+</html>
