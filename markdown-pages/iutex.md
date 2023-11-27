@@ -4,11 +4,13 @@
 
 > [GitHub repository](https://github.com/Vredeza/IUTexTemplate)
 
-## Titre 2
 
-blzdnzaddnlzk
-zdknazkldnaz
-dknz
-dkazndzlkadn
-azdzdklnzda
-lk
+## What I learned from it
+
+
+
+## Skills put to use
+
+## Screenshots
+
+![Page de garde](../images/iutex_pageDeGarde.png)
